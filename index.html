@@ -24,12 +24,34 @@
   <main class="container">
     <section class="hero">
       <div class="hero-text">
-        <h1>Hey, I'm Daniel 👋</h1>
-        <p class="tagline">A Designer, Marketer &amp; Creator.</p>
-        <p class="role">Currently at <strong>Tim Hortons Digital</strong>, designing experiences for Tim's Guests.</p>
+        <p class="eyebrow">I'm Daniel, a Senior Product Designer at <strong>Tim Hortons Digital</strong></p>
+        <h1>I design complex digital products and AI-native experiences that make technology easier to understand and use.</h1>
       </div>
       <div class="hero-image">
         <img src="assets/hero-image.png" alt="Illustrated avatar of Daniel waving" />
+      </div>
+    </section>
+
+    <section class="stat-grid">
+      <div class="stat-card">
+        <span class="stat-label">Speed</span>
+        <h3>66% faster</h3>
+        <p>Design-to-handoff.</p>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Growth</span>
+        <h3>24% increase</h3>
+        <p>Mastercard signups.</p>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Systems</span>
+        <h3>AI-native</h3>
+        <p>Design system.</p>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Scope</span>
+        <h3>Enterprise + consumer</h3>
+        <p>Products.</p>
       </div>
     </section>
 
@@ -41,7 +63,7 @@
           <div class="card-body">
             <span class="tag">AI &amp; Design Systems</span>
             <h3>The Blueprint: Building an AI-Native Design System</h3>
-            <p>Transforming the Tims Design System into knowledge an AI can understand, reason with, and build from.</p>
+            <p>Turning a design system into a language AI can understand and build from.</p>
             <span class="arrow">View case study →</span>
           </div>
         </a>
@@ -50,7 +72,7 @@
           <div class="card-body">
             <span class="tag">Game Design</span>
             <h3>Roll Up to Win Digital Game</h3>
-            <p>Rebuilding the digital game to eliminate technical friction and accelerate the winning experience.</p>
+            <p>Rebuilding a digital game experience to eliminate technical friction and accelerate the path to winning.</p>
             <span class="arrow">View case study →</span>
           </div>
         </a>
@@ -59,7 +81,7 @@
           <div class="card-body">
             <span class="tag">Onboarding</span>
             <h3>Tims Mastercard Onboarding</h3>
-            <p>A holistic redesign of the credit card onboarding flow, yielding 24% more signups month over month.</p>
+            <p>Redesigning the credit card onboarding experience to reduce friction and increase conversion.</p>
             <span class="arrow">View case study →</span>
           </div>
         </a>
@@ -101,5 +123,43 @@
       <a href="https://www.instagram.com/danhaddad_" target="_blank" rel="noopener"><img class="social-icon" src="assets/Instagram.avif" alt="Instagram" /></a>
     </div>
   </footer>
+
+  <script>
+    // Start the stat-card ring sweep at the edge the cursor entered from.
+    (function () {
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+      // Where the bright part of the conic-gradient sits, relative to its start angle.
+      var PEAK = 290;
+
+      document.querySelectorAll('.stat-card').forEach(function (card) {
+        var anim = null;
+
+        card.addEventListener('pointerenter', function (e) {
+          if (reduce.matches) return;
+
+          var r = card.getBoundingClientRect();
+          var dx = e.clientX - (r.left + r.width / 2);
+          var dy = e.clientY - (r.top + r.height / 2);
+          // Clockwise from 12 o'clock, matching conic-gradient's angle origin.
+          var entry = (Math.atan2(dx, -dy) * 180 / Math.PI + 360) % 360;
+          var start = (entry - PEAK + 360) % 360;
+
+          if (anim) anim.cancel();
+          try {
+            anim = card.animate(
+              [{ '--ring-angle': start + 'deg' }, { '--ring-angle': start + 360 + 'deg' }],
+              { duration: 2000, iterations: Infinity }
+            );
+          } catch (err) {
+            anim = null; // Falls back to the CSS animation.
+          }
+        });
+
+        card.addEventListener('pointerleave', function () {
+          if (anim) { anim.cancel(); anim = null; }
+        });
+      });
+    })();
+  </script>
 </body>
 </html>

@@ -145,28 +145,23 @@ header.site-header {
   object-fit: cover;
 }
 
+.hero .eyebrow {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.hero .eyebrow strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
 .hero h1 {
-  font-size: clamp(2.2rem, 6vw, 3.5rem);
+  font-size: clamp(1.75rem, 3.4vw, 2.5rem);
   font-weight: 800;
   letter-spacing: -0.02em;
-  margin-bottom: 12px;
-}
-
-.hero .tagline {
-  font-size: clamp(1.1rem, 3vw, 1.4rem);
-  color: var(--text-muted);
-  max-width: 640px;
-  margin-bottom: 8px;
-}
-
-.hero .role {
-  font-size: 1rem;
-  color: var(--text-muted);
-  max-width: 640px;
-}
-
-.hero .role strong {
-  color: var(--text);
+  line-height: 1.18;
+  max-width: 24ch;
 }
 
 @media (max-width: 640px) {
@@ -197,6 +192,125 @@ header.site-header {
 }
 
 /* Project grid */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 60px;
+}
+
+@media (max-width: 900px) {
+  .stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 520px) {
+  .stat-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@property --ring-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.stat-card {
+  position: relative;
+  isolation: isolate;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: transparent;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Rotating red ring, revealed on hover */
+.stat-card::before {
+  content: '';
+  position: absolute;
+  inset: -2.5px;
+  border-radius: 16.5px;
+  z-index: -2;
+  background: conic-gradient(
+    from var(--ring-angle),
+    transparent 0deg,
+    transparent 160deg,
+    var(--accent) 250deg,
+    #ff6b5e 290deg,
+    var(--accent) 330deg,
+    transparent 360deg
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Opaque inner fill so the ring only shows at the edge */
+.stat-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 13px;
+  z-index: -1;
+  background: var(--bg-alt);
+}
+
+.stat-card:hover {
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(214, 40, 40, 0.18);
+}
+
+.stat-card:hover::before {
+  opacity: 1;
+  animation: ring-spin 2s linear infinite;
+}
+
+@keyframes ring-spin {
+  to {
+    --ring-angle: 360deg;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stat-card {
+    transition: border-color 0.3s ease;
+  }
+  .stat-card:hover {
+    border-color: var(--accent);
+    transform: none;
+  }
+  .stat-card:hover::before {
+    animation: none;
+  }
+}
+
+.stat-card .stat-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+}
+
+.stat-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.stat-card p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -403,6 +517,59 @@ footer.site-footer .nav-social a:hover {
   font-size: 0.7rem;
   color: var(--text-muted);
   margin-bottom: 4px;
+}
+
+.case-overview {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 40px;
+  padding: 40px 0 8px;
+  align-items: start;
+}
+
+.case-overview h2 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.case-overview .summary {
+  color: var(--text);
+}
+
+.overview-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.info-card {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 20px;
+}
+
+.info-card .label {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.info-card .value {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 700px) {
+  .case-overview {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
 }
 
 .case-body {
