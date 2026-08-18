@@ -35,14 +35,21 @@
       <div>
         <h2>Overview</h2>
         <p class="summary">
-          The Tims Blueprint transforms our Design System from static documentation into
-          structured knowledge an AI agent can reason with and build from. It now powers
-          our internal AI design workflow — generating consistent, production-ready design
-          work and cutting design time from brief to handoff by roughly 66%.
+          AI could generate interfaces. It couldn't reliably generate interfaces that
+          followed our design system.
+        </p>
+        <p class="summary">
+          I led the transformation of the Tims Design System from static documentation
+          into structured knowledge an AI agent could reason with and build with, reducing
+          design time from brief to handoff by ~66%.
+        </p>
+        <p class="summary">
+          I figured out how to translate a design system's implicit human knowledge into
+          something an AI could reason about.
         </p>
       </div>
       <div class="overview-cards">
-        <div class="info-card"><span class="label">Role</span><span class="value">Lead Designer &amp; Developer</span></div>
+        <div class="info-card"><span class="label">Role</span><span class="value">Lead Product Designer · AI Design Systems</span></div>
         <div class="info-card"><span class="label">Team</span><span class="value">Design team</span></div>
         <div class="info-card"><span class="label">Timeline</span><span class="value">2025–2026</span></div>
       </div>
@@ -65,7 +72,51 @@
         AI could understand, reason with, and build from.
       </p>
 
-      <h2>Research Methodology</h2>
+      <h2>Research &amp; Methodology</h2>
+      <p>
+        We started by auditing where AI was going wrong. Working with 2 designers and a
+        copywriter, I collected a sample of AI-generated screens and flows and compared
+        each one against the Tims Design System — our documentation, Figma component
+        libraries, design tokens, and shipped product screens — logging every deviation.
+      </p>
+      <p>
+        The failing outputs spanned every format the team generated: screens, flows, and
+        components. The most common failures were spacing that ignored our layout rules,
+        the wrong component or variant for the context, missed accessibility requirements,
+        and copy that broke brand voice.
+      </p>
+      <p>
+        To determine what knowledge the AI actually needed, I traced each recurring
+        failure back to the implicit rule a designer would have applied — the reasoning we
+        carried in our heads but had never written down — and converted it into an
+        explicit, structured rule the agent could follow.
+      </p>
+      <p>
+        We validated the system by generating real product experiences and scoring them
+        against the source design system, with the design team reviewing outputs each
+        iteration until results were consistently production-ready.
+      </p>
+      <p>My role went well beyond documenting rules and patterns. I:</p>
+      <ul>
+        <li>Defined the knowledge architecture</li>
+        <li>Audited existing design-system rules</li>
+        <li>Converted implicit designer knowledge into explicit rules</li>
+        <li>Defined component usage logic</li>
+        <li>Established AI output requirements</li>
+        <li>Created evaluation criteria</li>
+        <li>Tested and iterated outputs</li>
+        <li>Collaborated with designers and developers</li>
+        <li>Built and prototyped the workflow</li>
+      </ul>
+
+      <h2>Problem Statement</h2>
+      <div class="callout">
+        We needed a scalable way for designers to rapidly generate high-quality interfaces
+        while ensuring every output remained consistent with the Tims Design System, brand
+        guidelines, and accessibility standards.
+      </div>
+
+      <h2>Solution Approach</h2>
       <p>
         I partnered with the design team to create The Tims Blueprint — a structured
         knowledge base that translates our Design System into rules an AI agent can
@@ -80,43 +131,49 @@
         <li>Brand voice and copywriting guidelines</li>
         <li>Real product examples for the AI to reference</li>
       </ul>
-      <p>
-        My primary responsibility was documenting the rules and patterns that governed how
-        interfaces should be constructed and when each pattern should be used.
-      </p>
-
-      <h2>Problem Statement</h2>
-      <div class="callout">
-        We needed a scalable way for designers to rapidly generate high-quality interfaces
-        while ensuring every output remained consistent with the Tims Design System, brand
-        guidelines, and accessibility standards.
-      </div>
 
       <h2>The Process</h2>
-      <p>The Blueprint was designed to accept multiple forms of input, including:</p>
-      <ul>
-        <li>Natural language prompts</li>
-        <li>Figma files</li>
-        <li>Screenshots</li>
-        <li>Existing code</li>
-      </ul>
+
+      <h3>01 — Audit</h3>
       <p>
-        Before generating an output, the agent asks designers how they'd like the result
-        delivered. Depending on the task, it can produce:
+        Identify where AI-generated interfaces deviated from the existing system —
+        cataloguing every spacing, component, accessibility, and copy failure against the
+        source of truth.
       </p>
-      <ul>
-        <li>Editable Figma designs</li>
-        <li>Front-end code</li>
-        <li>High-fidelity mockups</li>
-        <li>Design assessments that evaluate existing screens against our Design System</li>
-      </ul>
+
+      <h3>02 — Structure</h3>
       <p>
-        To improve reliability, we continuously tested outputs, identified
-        inconsistencies, and expanded the Blueprint with additional rules, edge cases, and
-        examples. Each iteration improved the agent's ability to understand not only what
-        components existed, but when and why they should be used.
+        Break the design system into tokens, components, behaviours, patterns,
+        accessibility rules and brand principles — discrete, reusable units of knowledge
+        rather than one monolithic document.
       </p>
-      <p>Today, the Blueprint acts as the foundation that powers our internal AI design workflow.</p>
+
+      <h3>03 — Encode</h3>
+      <p>
+        Translate those rules into knowledge the agent could reason over — pairing each
+        rule with the context for when and why it applies, so the Blueprint could accept
+        prompts, Figma files, screenshots, or existing code as input.
+      </p>
+
+      <h3>04 — Test</h3>
+      <p>
+        Generate real product experiences and compare them against the source system —
+        producing editable Figma designs, front-end code, high-fidelity mockups, and
+        design assessments.
+      </p>
+
+      <h3>05 — Iterate</h3>
+      <p>
+        Document edge cases and reasoning that weren't captured by the initial rules,
+        expanding the Blueprint each round so the agent understood not just what
+        components existed, but when and why to use them.
+      </p>
+
+      <h3>06 — Deploy</h3>
+      <p>
+        Use the Blueprint as the foundation for the team's AI design workflow — the system
+        that now powers day-to-day interface generation.
+      </p>
       <img src="../assets/Blueprint-Process.png" alt="The Blueprint process — from input to generated output" />
 
       <h2>Results</h2>
