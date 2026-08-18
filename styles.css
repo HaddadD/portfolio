@@ -475,6 +475,17 @@ footer.site-footer .nav-social a:hover {
 }
 
 /* Case study page */
+.case-hero-banner {
+  width: 100%;
+}
+
+.case-hero-banner img {
+  width: 100%;
+  height: clamp(200px, 36vw, 420px);
+  object-fit: cover;
+  display: block;
+}
+
 .case-hero {
   padding: 50px 0 30px;
   border-bottom: 1px solid var(--border);
@@ -651,6 +662,26 @@ footer.site-footer .nav-social a:hover {
   font-size: 0.8rem;
   color: var(--text-muted);
   margin-top: 4px;
+}
+
+.step-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.step-gallery img {
+  width: 100%;
+  height: auto;
+  max-height: none;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .step-gallery {
+    grid-template-columns: 1fr;
+  }
 }
 
 .before-after {
