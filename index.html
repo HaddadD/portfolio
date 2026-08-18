@@ -132,8 +132,6 @@
       var PEAK = 290;
 
       document.querySelectorAll('.stat-card').forEach(function (card) {
-        var anim = null;
-
         card.addEventListener('pointerenter', function (e) {
           if (reduce.matches) return;
 
@@ -144,19 +142,9 @@
           var entry = (Math.atan2(dx, -dy) * 180 / Math.PI + 360) % 360;
           var start = (entry - PEAK + 360) % 360;
 
-          if (anim) anim.cancel();
-          try {
-            anim = card.animate(
-              [{ '--ring-angle': start + 'deg' }, { '--ring-angle': start + 360 + 'deg' }],
-              { duration: 2000, iterations: Infinity }
-            );
-          } catch (err) {
-            anim = null; // Falls back to the CSS animation.
-          }
-        });
-
-        card.addEventListener('pointerleave', function () {
-          if (anim) { anim.cancel(); anim = null; }
+          // The CSS ring-spin animation adds --ring-angle on top of this offset,
+          // so the bright arc always begins at the cursor's entry point.
+          card.style.setProperty('--ring-start', start + 'deg');
         });
       });
     })();

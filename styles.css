@@ -239,7 +239,7 @@ header.site-header {
   border-radius: 16.5px;
   z-index: -2;
   background: conic-gradient(
-    from var(--ring-angle),
+    from calc(var(--ring-start, 0deg) + var(--ring-angle)),
     transparent 0deg,
     transparent 160deg,
     var(--accent) 250deg,
