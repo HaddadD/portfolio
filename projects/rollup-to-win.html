@@ -57,7 +57,13 @@
       </p>
 
       <h2>Research &amp; Problem Statement</h2>
-      <p>User research surfaced several pain points:</p>
+      <p>We approached the problem from three research angles:</p>
+      <ul>
+        <li><strong>Usability testing with returning players</strong> — we recruited Guests who had played Roll Up to Win in previous years, so we could watch where the existing experience lost people rather than guess</li>
+        <li><strong>Survey results from Tims Insiders</strong> — our Guest research panel gave us attitudinal data at scale on what players found frustrating and what kept them coming back</li>
+        <li><strong>App store review analysis</strong> — we compiled and categorized App Store and Google Play reviews specifically mentioning Roll Up to Win, surfacing unprompted complaints from real players mid-season</li>
+      </ul>
+      <p>All three sources converged on the same pain points:</p>
       <ul>
         <li>Sluggish performance and technical glitches</li>
         <li>Navigation complexity with excessive pages</li>
@@ -77,11 +83,45 @@
         emphasized a "simplicity-first" philosophy — reducing time-to-reward and
         prioritizing the psychological payoff moment.
       </p>
+      <p>Mapping the journey made the real problem obvious. To play, a user had to:</p>
+      <div class="flow-compare">
+        <div class="flow-block before">
+          <span class="flow-label">Before</span>
+          <p class="flow-steps">Navigate → load → read → confirm → play → navigate → play again</p>
+        </div>
+        <div class="flow-block goal">
+          <span class="flow-label">Goal</span>
+          <p class="flow-steps">Open → play → reward → play again</p>
+        </div>
+      </div>
+      <p>
+        That's the core product insight. We weren't merely simplifying the UI — we were
+        shortening the reward loop. Every decision that followed was measured against a
+        single question: does this move the Guest closer to the payoff moment, or further
+        from it?
+      </p>
+
+      <h2>My Responsibilities</h2>
+      <ul>
+        <li>Led the UX strategy</li>
+        <li>Defined the new information architecture</li>
+        <li>Designed onboarding</li>
+        <li>Redesigned the gameplay loop</li>
+        <li>Worked with engineering to identify performance constraints</li>
+        <li>Designed and animated game interactions</li>
+        <li>Partnered with PMs on prioritization</li>
+        <li>Validated concepts with research</li>
+        <li>Oversaw implementation</li>
+      </ul>
 
       <h2>Design Solutions</h2>
 
       <h3>1. Onboarding</h3>
-      <p>Condensed five intro screens into one by merging instruction content with legal requirements.</p>
+      <p>
+        Users were forced through five informational screens before reaching the game's
+        primary action, delaying the first moment of play. 5 screens down to 1 screen,
+        bringing the time to first roll lower than previous years.
+      </p>
       <div class="before-after">
         <figure>
           <figcaption>Before</figcaption>
@@ -96,8 +136,19 @@
       <h3>2. Skill Testing Question (STQ)</h3>
       <p>
         Shifted from an immediate requirement post-signup to "just-in-time" deployment —
-        appearing only when users attempt their first roll.
+        appearing only when users attempt their first roll. The principle: don't ask users
+        to solve a problem before they have encountered it.
       </p>
+      <div class="flow-compare">
+        <div class="flow-block before">
+          <span class="flow-label">Instead of</span>
+          <p class="flow-steps">Sign up → STQ → finally play</p>
+        </div>
+        <div class="flow-block goal">
+          <span class="flow-label">We created</span>
+          <p class="flow-steps">Sign up → play → STQ when required</p>
+        </div>
+      </div>
       <div class="before-after">
         <figure>
           <figcaption>Before</figcaption>
@@ -109,7 +160,7 @@
         </figure>
       </div>
 
-      <h3>3. Performance Optimization</h3>
+      <h3>3. Reducing Navigation &amp; Load Complexity</h3>
       <p>
         Eliminated the four-tab structure; consolidated "Play Now" and "Timeline" into a
         paginated feed; moved "Prizes" to modal access.
@@ -126,7 +177,13 @@
       </div>
 
       <h3>4. Prize Clarity</h3>
-      <p>Introduced a toggle view distinguishing app-based prizes from cup-based prizes.</p>
+      <p>
+        Guests were confused about the odds — with app-based and cup-based prizes pooled
+        into one list, it wasn't clear what they were actually playing for. Introducing a
+        toggle view that separated the two into distinct tabs resolved the confusion, and
+        it visually demonstrated that there were far more digital prizes to be won in the
+        app than on the physical cup.
+      </p>
       <div class="before-after">
         <figure>
           <figcaption>Before</figcaption>
@@ -159,13 +216,33 @@
           <div class="label">Major technical issues at launch</div>
         </div>
       </div>
+      <p>
+        By simplifying the gameplay journey and reducing technical complexity, the 2026
+        experience increased engagement while successfully onboarding 3.1M users without
+        major launch issues.
+      </p>
 
-      <h2>Reflection &amp; Future Priorities</h2>
-      <ul>
-        <li>Receipt-based roll display after Mobile Orders</li>
-        <li>Haptic feedback on Scan &amp; Pay screens</li>
-        <li>Direct roll availability within the Rewards tab</li>
-      </ul>
+      <h2>Reflection</h2>
+      <p>
+        The biggest lesson was that improving engagement wasn't about adding more game
+        mechanics. It was about removing everything between the user and the reward.
+      </p>
+      <p>
+        Every instinct on a stagnating product points toward addition — new modes, new
+        mechanics, more reasons to come back. The research pointed the opposite direction.
+        Players weren't asking for more game; they were telling us the game was buried
+        under screens, loads, and confirmations. The wins came from subtraction: five
+        onboarding screens became one, a four-tab structure collapsed into a single feed,
+        and a five-click re-roll became one button.
+      </p>
+      <p>
+        It also reframed how I think about performance. Load time wasn't an engineering
+        footnote to clean up at the end — it was a design problem, because every second
+        between opening the app and rolling is a second the Guest can decide it isn't
+        worth it. Treating speed as part of the experience, and partnering with
+        engineering early to find those constraints, mattered as much as any screen I
+        designed.
+      </p>
 
       <div class="case-nav">
         <a href="the-blueprint.html">← The Blueprint</a>

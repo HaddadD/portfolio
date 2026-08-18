@@ -676,6 +676,51 @@ footer.site-footer .nav-social a:hover {
   margin-top: 4px;
 }
 
+.flow-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.flow-block {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 20px;
+  background: var(--bg-alt);
+}
+
+.flow-block.goal {
+  border-color: var(--accent);
+}
+
+.flow-label {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.flow-block.goal .flow-label {
+  color: var(--accent);
+}
+
+.flow-steps {
+  margin: 0;
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 640px) {
+  .flow-compare {
+    grid-template-columns: 1fr;
+  }
+}
+
 .step-row {
   display: grid;
   grid-template-columns: 1fr 1.1fr;
