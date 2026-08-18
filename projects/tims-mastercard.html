@@ -37,7 +37,7 @@
         <p class="summary">
           A holistic, end-to-end redesign of the Tims Mastercard onboarding experience.
           By mapping the entire journey rather than optimizing isolated screens, we cut
-          the flow from 18 steps to 11 and grew monthly signups by 24% month over month.
+          the flow from 18 steps to 11 and grew monthly signups by 24% year over year.
         </p>
       </div>
       <div class="overview-cards">
@@ -58,13 +58,24 @@
         experience and identified friction points.
       </p>
 
-      <h2>Research Methodology</h2>
+      <h2>Mapping the Journey</h2>
+      <p>
+        The team had plenty of abandonment data, but it was difficult to understand how
+        individual drop-off points connected across the journey. I translated the data
+        into a visual map that allowed the cross-functional team to see friction
+        accumulate across the entire experience.
+      </p>
       <p>
         I created visual "Lego Blocks" — color-coded representations showing abandonment
         data per screen. This tool helped the team see exactly where users dropped off and
         which steps felt unnecessary or intimidating.
       </p>
       <img src="../assets/TimsMastercard-OldFlow.avif" alt="The original Tims Mastercard onboarding flow mapped screen by screen" />
+      <p>
+        The problem wasn't concentrated in a single screen. Friction accumulated through
+        repeated information entry, unnecessary confirmation steps, unclear legal
+        language, eligibility uncertainty, and inconsistent post-approval experiences.
+      </p>
 
       <h2>Problem Statement</h2>
       <div class="callout">
@@ -80,6 +91,7 @@
         <div>
           <h3>1. Clarify Product Message</h3>
           <p>Replaced the carousel with a dedicated marketing page</p>
+          <p class="rationale">A carousel forced Guests to work for information they needed to make a decision, and most never swiped past the first slide. A dedicated page let people evaluate the card's value on their own terms before committing to an application.</p>
         </div>
         <div class="step-images"><img src="../assets/TimsMastercard-Step1.png" alt="Step 1 — dedicated marketing page" /></div>
       </div>
@@ -87,6 +99,7 @@
         <div>
           <h3>2. Simplify Legal Agreements</h3>
           <p>Consolidated four consent checkboxes into one</p>
+          <p class="rationale">Four separate checkboxes read as four separate risks, creating hesitation at the exact moment we asked for commitment. Consolidating them into a single consent — with the full terms still one tap away — preserved legal rigour while removing the visual weight that made the step feel heavier than it was.</p>
         </div>
         <div class="step-images"><img src="../assets/TimsMastercard-Step2.png" alt="Step 2 — simplified legal agreements" /></div>
       </div>
@@ -94,6 +107,7 @@
         <div>
           <h3>3. Remove Credit Confusion</h3>
           <p>Automated eligibility evaluation behind the scenes</p>
+          <p class="rationale">Asking Guests to self-assess their credit eligibility introduced doubt and invited them to disqualify themselves before we ever evaluated them. Moving that determination behind the scenes meant people found out they qualified instead of guessing whether they might.</p>
         </div>
         <div class="step-images"><img src="../assets/TimsMastercard-Step3.png" alt="Step 3 — automated eligibility evaluation" /></div>
       </div>
@@ -101,6 +115,7 @@
         <div>
           <h3>4. Quebec Compliance</h3>
           <p>Leveraged language preferences to eliminate a redundant step</p>
+          <p class="rationale">We already knew each Guest's language preference, so asking again was a redundant step that existed to satisfy a system, not a person. Using data we already had eliminated the screen entirely while keeping us compliant.</p>
         </div>
         <div class="step-images"><img src="../assets/TimsMastercard-Step4.png" alt="Step 4 — Quebec compliance handling" /></div>
       </div>
@@ -108,6 +123,7 @@
         <div>
           <h3>5. Merge Screens</h3>
           <p>Combined back-to-back information collection (name, DOB, address, employment)</p>
+          <p class="rationale">Back-to-back screens each asking for one or two fields made a short form feel like a long interrogation. Grouping related information into logical sets reduced the perceived length of the flow and let Guests build momentum instead of restarting their focus on every tap.</p>
         </div>
         <div class="step-images two">
           <img src="../assets/TimsMastercard-Step5.1.png" alt="Step 5 — merged information collection screens (part 1)" />
@@ -118,6 +134,7 @@
         <div>
           <h3>6. Humanize Copy</h3>
           <p>Rewrote legal/verification language into accessible explanations</p>
+          <p class="rationale">Legal and verification language signals risk even when nothing risky is happening, and unexplained steps read as suspicious. Rewriting the copy to explain what we were doing and why turned moments of doubt into moments of reassurance — critical for a financial product where trust is the conversion.</p>
         </div>
         <div class="step-images"><img src="../assets/TimsMastercard-Step6.png" alt="Step 6 — humanized copy" /></div>
       </div>
@@ -125,6 +142,7 @@
         <div>
           <h3>7. Remove Duplicate Confirmation</h3>
           <p>Eliminated a redundant shipping address screen</p>
+          <p class="rationale">Confirming the same shipping address twice implied we hadn't listened the first time, undermining confidence in the system. Removing the duplicate respected the Guest's time and signalled that their input had been received.</p>
         </div>
         <div class="step-images"><img src="../assets/TimsMastercard-Step7.png" alt="Step 7 — removed duplicate confirmation" /></div>
       </div>
@@ -132,6 +150,7 @@
         <div>
           <h3>8. Celebration Redesign</h3>
           <p>Made the approval screen more encouraging</p>
+          <p class="rationale">Approval is the emotional peak of the entire journey and the flow treated it like a receipt. Designing a genuine celebration rewarded the effort Guests had just invested and carried motivation into the setup steps that followed.</p>
         </div>
         <div class="step-images"><img src="../assets/TimsMastercard-Step8.png" alt="Step 8 — redesigned celebration screen" /></div>
       </div>
@@ -139,6 +158,7 @@
         <div>
           <h3>9. Maintain Momentum</h3>
           <p>Ensured CTA consistency across post-approval steps</p>
+          <p class="rationale">Post-approval steps used inconsistent calls to action, so Guests who had just been approved lost the thread on what to do next — and an approved card that never gets activated delivers no value. Consistent CTAs made the path forward obvious at every step.</p>
         </div>
         <div class="step-images"><img src="../assets/TimsMastercard-Step9.png" alt="Step 9 — consistent post-approval CTAs" /></div>
       </div>
@@ -146,6 +166,7 @@
         <div>
           <h3>10. Unify Visual Design</h3>
           <p>Removed distracting steppers and oversized headers</p>
+          <p class="rationale">Steppers and oversized headers constantly reminded Guests how far they still had to go while crowding out the content they were there for. Removing them made the flow feel shorter and more focused, and gave the experience the consistency Guests expect from a brand they already trust.</p>
         </div>
         <div class="step-images two">
           <img src="../assets/TimsMastercard-Step10.1.png" alt="Step 10 — unified visual design (part 1)" />
@@ -169,11 +190,26 @@
         </div>
         <div class="metric">
           <div class="num">+24%</div>
-          <div class="label">Monthly signups, MoM</div>
+          <div class="label">Monthly signups, YoY</div>
         </div>
       </div>
 
+      <h2>My Contribution</h2>
+      <p>
+        I led the end-to-end UX redesign, facilitated the cross-functional journey-mapping
+        workshop, translated abandonment data into design opportunities, and partnered
+        with Product, Legal, Analytics, Engineering and Copy to bring the new flow into
+        production.
+      </p>
+
       <h2>Reflection</h2>
+      <p>
+        The biggest lesson was that the most important UX problems weren't isolated UI
+        issues. They were friction created between systems, teams and stages of the
+        journey. Mapping the experience end-to-end made those relationships visible and
+        gave the team a shared framework for deciding what to remove, automate and
+        simplify.
+      </p>
       <p>
         Looking at the journey holistically — rather than optimizing isolated screens — was
         the single biggest driver of impact. With more time, earlier user testing could

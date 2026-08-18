@@ -737,6 +737,12 @@ footer.site-footer .nav-social a:hover {
   margin-bottom: 0;
 }
 
+.step-row .rationale {
+  margin-top: 10px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
 .step-images {
   display: grid;
   gap: 12px;
