@@ -481,9 +481,14 @@ footer.site-footer .nav-social a:hover {
 
 .case-hero-banner img {
   width: 100%;
-  height: clamp(200px, 36vw, 420px);
-  object-fit: cover;
+  height: auto;
   display: block;
+}
+
+.back-row {
+  padding: 20px 24px 4px;
+  max-width: var(--max-width);
+  margin: 0 auto;
 }
 
 .case-hero {
@@ -491,7 +496,7 @@ footer.site-footer .nav-social a:hover {
   border-bottom: 1px solid var(--border);
 }
 
-.case-hero .back-link {
+.back-link {
   color: var(--text-muted);
   font-size: 0.9rem;
   font-weight: 600;
@@ -499,7 +504,7 @@ footer.site-footer .nav-social a:hover {
   margin-bottom: 16px;
 }
 
-.case-hero .back-link:hover {
+.back-link:hover {
   color: var(--accent);
 }
 
@@ -662,6 +667,45 @@ footer.site-footer .nav-social a:hover {
   font-size: 0.8rem;
   color: var(--text-muted);
   margin-top: 4px;
+}
+
+.step-row {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 28px;
+  align-items: center;
+  margin: 32px 0;
+}
+
+.step-row h3 {
+  margin: 0 0 8px;
+}
+
+.step-row p {
+  margin-bottom: 0;
+}
+
+.step-images {
+  display: grid;
+  gap: 12px;
+}
+
+.step-images.two {
+  grid-template-columns: 1fr 1fr;
+}
+
+.step-images img {
+  width: 100%;
+  height: auto;
+  max-height: none;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .step-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
 }
 
 .step-gallery {
