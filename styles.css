@@ -480,9 +480,16 @@ footer.site-footer .nav-social a:hover {
 }
 
 .case-hero-banner img {
-  width: 100%;
+  width: 50%;
   height: auto;
   display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 640px) {
+  .case-hero-banner img {
+    width: 100%;
+  }
 }
 
 .back-row {
