@@ -558,6 +558,11 @@ footer.site-footer .nav-social a:hover {
 
 .case-overview .summary {
   color: var(--text);
+  margin-bottom: 14px;
+}
+
+.case-overview .summary:last-child {
+  margin-bottom: 0;
 }
 
 .overview-cards {
@@ -595,9 +600,48 @@ footer.site-footer .nav-social a:hover {
   }
 }
 
+/* Two-column editorial layout: section headings sit in a left rail, body copy runs in a
+   right column whose right edge lines up with the Role/Team/Timeline cards above it. */
 .case-body {
   padding: 40px 0 60px;
-  max-width: 760px;
+  max-width: none;
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  column-gap: 40px;
+  align-items: start;
+}
+
+/* Body copy and lists default to the right column. */
+.case-body > * {
+  grid-column: 2;
+}
+
+/* Headings occupy the left rail. */
+.case-body > h2,
+.case-body > h3 {
+  grid-column: 1;
+}
+
+/* Media blocks span both columns, keeping their current placement. */
+.case-body > img,
+.case-body > .before-after,
+.case-body > .step-row,
+.case-body > .step-gallery,
+.case-body > .case-nav {
+  grid-column: 1 / -1;
+}
+
+
+@media (max-width: 900px) {
+  .case-body {
+    grid-template-columns: 1fr;
+  }
+
+  .case-body > *,
+  .case-body > h2,
+  .case-body > h3 {
+    grid-column: 1;
+  }
 }
 
 .case-body h2 {
@@ -628,6 +672,28 @@ footer.site-footer .nav-social a:hover {
 
 .case-body li {
   margin-bottom: 6px;
+}
+
+/* Line each heading up with the top of the content that opens its section.
+   Declared after the paragraph/list margins so it wins the cascade. */
+.case-body > h2 + *:not(h2):not(h3) {
+  margin-top: 40px;
+}
+
+.case-body > h3 + *:not(h2):not(h3) {
+  margin-top: 24px;
+}
+
+.case-body > h2:first-child,
+.case-body > h2:first-child + * {
+  margin-top: 0;
+}
+
+@media (max-width: 900px) {
+  .case-body > h2 + *:not(h2):not(h3),
+  .case-body > h3 + *:not(h2):not(h3) {
+    margin-top: 0;
+  }
 }
 
 .case-body img {
@@ -877,6 +943,46 @@ footer.site-footer .nav-social a:hover {
 
 .case-nav a:hover {
   color: var(--accent);
+}
+
+/* Image lightbox */
+.zoomable {
+  cursor: zoom-in;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  cursor: zoom-out;
+}
+
+.lightbox[hidden] {
+  display: none;
+}
+
+.lightbox img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+body.lightbox-open {
+  overflow: hidden;
+}
+
+@media (max-width: 640px) {
+  .lightbox {
+    padding: 16px;
+  }
 }
 
 .social-icon {
